@@ -1,4 +1,10 @@
 <div class="main-body">
-  {{orderItem.pizza.name}} x <input type="number" [(ngModel)]="orderItem.amount" min="0">
-  = {{orderItem.pizza.price * orderItem.amount}}
+  {{ orderItem.pizza.name }} x
+  <input
+    type="number"
+    [(ngModel)]="orderItem.amount"
+    (ngModelChange)="amountChanged()"
+    min="0"
+  />
+  = {{ orderItem.pizza.price * orderItem.amount }}
 </div>
